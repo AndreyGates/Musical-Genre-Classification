@@ -1,7 +1,7 @@
 import librosa
 import torch
 import numpy as np
-from Paras import Para
+from scripts.Paras import Para
 
 
 class MusicDealer:
@@ -41,24 +41,37 @@ class MusicDealer:
 
         idx_list.sort(key=lambda x: -1 * tag_list.get(x))
         tmp = dict()
+
         for i in idx_list:
             current_genre = Para.dictionary.get(i)
             current_score = tag_list.get(i) / _sum * 100
             tmp[i] = current_score
+
             if current_score == 0:
                 break
+
             print('Genre {0}: {1}%'.format(current_genre, round(current_score, 2)))
+
         return idx_list[0], idx_list[1], idx_list[2], tmp
 
-
+# using only CNN as it was proven to work better than CRNN or RNN
 if __name__ == '__main__':
     from models import CnnModel, CrnnLongModel, CrnnModel
 
-    path1 = 'mayday/如烟.mp3'
-    path2 = 'mayday/转眼.mp3'
+    path1 = 'test/Succession Soundtrack - _Succession Main Title_ - Nicholas Britell.mp3'
+    path2 = 'test/Dr. Dre - Still D.R.E. (Official Music Video) ft. Snoop Dogg.mp3'
+    path3 = 'test/Flight of the Bumblebee - Rimsky-Korsakov (arr. Rachmaninoff).mp3'
 
-    WEIGHT_PATH = "../model/"
-    dealer = MusicDealer(WEIGHT_PATH + "CrnnLongModel.pt", CrnnLongModel(), 256)
+    WEIGHT_PATH = "model"
+    dealer = MusicDealer(WEIGHT_PATH + "/CnnModel.pt", CnnModel())
 
-    dealer.get_genre(path1)
-    dealer.get_genre(path2)
+    #dealer.get_genre(path1)
+    #dealer.get_genre(path2)
+
+    gs = dealer.get_genre(path3)
+    for key in gs[3].keys():
+        if gs[3][key] == 0.0:
+            del gs[3][key]
+            break
+    
+    print(gs)

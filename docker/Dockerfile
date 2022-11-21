@@ -7,7 +7,7 @@ COPY requirements.txt ./requirements.txt
 
 # Install the dependencies
 RUN pip install --no-cache-dir -r requirements.txt
-#RUN pip install -Iv pywin32==305
+#RUN pip install -Iv pywin32==305s
 
 # Copy scripts to make app.py work
 COPY scripts ./scripts

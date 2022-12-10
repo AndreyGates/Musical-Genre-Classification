@@ -1,7 +1,9 @@
 # Load the libraries
 import shutil
+from pathlib import Path
 from fastapi import FastAPI, HTTPException, Request, UploadFile, File
 from fastapi.responses import HTMLResponse
+from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 
 from scripts.music_dealer import MusicDealer # Docker cannot process librosa library
@@ -10,6 +12,9 @@ from scripts.Paras import ParaSetting
 
 # Initialize an instance of FastAPI
 app = FastAPI()
+
+# For CSS (serving static files)
+app.mount("/static", StaticFiles(directory="static"), name="static")
 
 # Define templating for a web app
 templates = Jinja2Templates(directory='templates/')
@@ -22,7 +27,7 @@ def root():
 # Define the initial submission form route
 @app.get("/form", response_class=HTMLResponse)
 def form_post(request: Request):
-    result = "Send a track"
+    result = "-"
     return templates.TemplateResponse('form.html', context={'request': request, 'result': result})
 
 # Define the route to the music genre classifier
@@ -42,9 +47,10 @@ async def form_post(request: Request, file: UploadFile = File(...)):
     dealer = MusicDealer("model/CnnModel.pt", CnnModel())
     genre_scores = dealer.get_genre(audio_path)
         
-    result = {
+    '''result = {
                 "audio_file": audio_path, 
                 "music_genre": ParaSetting().dictionary[genre_scores[0]]
-             }
+             }'''
+    result = ParaSetting().dictionary[genre_scores[0]]
 
     return templates.TemplateResponse('form.html', context={'request': request, 'result': result})

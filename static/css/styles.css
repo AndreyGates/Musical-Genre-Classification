@@ -1,6 +1,6 @@
-button[type=submit] {
+button {
     padding:5px 15px; 
-    background:rgb(206, 21, 21); 
+    background:rgb(38, 190, 190); 
     border:0 none;
     cursor:pointer;
     -webkit-border-radius: 5px;

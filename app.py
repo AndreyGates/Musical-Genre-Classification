@@ -12,12 +12,8 @@ from scripts.Paras import ParaSetting
 
 # Initialize an instance of FastAPI
 app = FastAPI()
-
-# For CSS (serving static files)
 app.mount("/static", StaticFiles(directory="static"), name="static")
-
-# Define templating for a web app
-templates = Jinja2Templates(directory='templates/')
+templates = Jinja2Templates(directory='templates')
 
 # Define the default route 
 @app.get("/")

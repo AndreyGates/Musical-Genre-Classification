@@ -3,7 +3,6 @@ import torch
 import numpy as np
 from scripts.Paras import Para
 
-
 class MusicDealer:
     def __init__(self, weight_path, model, size=128):
         self.model = model
@@ -58,17 +57,12 @@ class MusicDealer:
 if __name__ == '__main__':
     from models import CnnModel, CrnnLongModel, CrnnModel
 
-    path1 = 'test/Succession Soundtrack - _Succession Main Title_ - Nicholas Britell.mp3'
-    path2 = 'test/Dr. Dre - Still D.R.E. (Official Music Video) ft. Snoop Dogg.mp3'
-    path3 = 'test/Flight of the Bumblebee - Rimsky-Korsakov (arr. Rachmaninoff).mp3'
+    path = 'test/test.mp3'
 
     WEIGHT_PATH = "model"
     dealer = MusicDealer(WEIGHT_PATH + "/CnnModel.pt", CnnModel())
 
-    #dealer.get_genre(path1)
-    #dealer.get_genre(path2)
-
-    gs = dealer.get_genre(path3)
+    gs = dealer.get_genre(path)
     for key in gs[3].keys():
         if gs[3][key] == 0.0:
             del gs[3][key]

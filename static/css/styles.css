@@ -1,8 +1,151 @@
-button {
-    padding:5px 15px; 
-    background:rgb(38, 190, 190); 
-    border:0 none;
-    cursor:pointer;
-    -webkit-border-radius: 5px;
-    border-radius: 5px; 
+body {
+  margin: 0 auto;
+  font-family: Gotham Rounded, sans-serif;
+  padding-bottom: 50px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 20px;
+  padding: 0 40px;
+  grid-template-areas: ". content content content content .";
+}
+
+.content {
+  grid-area: content;
+  max-width: 1000px;
+  width: 100%;
+}
+
+.dark-header {
+  background-color: #005681;
+  color: white;
+  position: relative;
+  z-index: 1;
+}
+
+.light-header {
+  color: white;
+  background-color: #00AAFF;
+  padding-top: 500px;
+  margin-top: -500px;
+}
+
+.brand-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo {
+  width: 50px;
+  margin-right: .5rem;
+}
+
+.title {
+  font-size: 3rem;
+  text-align: center;
+}
+
+.sub-title {
+  font-size: 1.5rem;
+  text-align: center;
+  font-weight: normal;
+}
+
+.dark-header-divider {
+  height: 150px;
+  margin-top: -5px;
+  background-position: bottom left;
+  background-size: cover;
+  position: relative;
+  z-index: 1;
+}
+
+.light-header-divider {
+  height: 150px;
+  margin-top: -5px;
+  background-position: bottom left;
+  background-size: cover;
+}
+
+.audio-form {
+  display: flex;
+  justify-content: center;
+  margin-top: 4rem;
+  margin-bottom: 1rem;
+  font-size: 1.75rem;
+}
+
+.audio-form input {
+  background-color: white;
+  color: #005681;
+  border: 2px solid black;
+  border-radius: .5em;
+  padding: .5em 1em;
+  margin-right: 1em;
+  outline: none;
+  flex-grow: 1;
+}
+
+.audio-form input:focus {
+  background-color: #DCF3FF;
+}
+
+.audio-form button {
+    
+  color: white;
+  background-color: #111;
+  border: 2px solid white;
+  border-radius: 50%;
+  padding: .5em 1em;
+  max-width: 250px;
+  cursor: pointer;
+  height: 50px;
+  width: 50px;
+  color: white;
+}
+
+.audio-form button:hover, .audio-form button:focus {
+  background-color: #333;
+}
+
+@media (max-width: 1200px) {
+  .grid {
+    grid-template-columns: 1fr;
+    grid-template-areas: "content";
+  }
+}
+
+@media (max-width: 800px) {
+  .audio-form {
+    flex-direction: column;
+  }
+
+  .audio-form button {
+    max-width: initial;
+    width: 100%;
+  }
+
+  .audio-form input {
+    margin-right: 0;
+    margin-bottom: 10px;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 500px) {
+  .brand-name {
+    display: none;
+  }
+
+  .logo {
+    margin-top: 1rem;
+  }
+
+  .audio-form {
+    margin: 0;
+    font-size: 1.25rem;
+  }
 }

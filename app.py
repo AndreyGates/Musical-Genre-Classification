@@ -56,3 +56,10 @@ async def form_post(request: Request, file: UploadFile = File(...)):
     result = ParaSetting().dictionary[genre_scores[0]]
 
     return templates.TemplateResponse('form.html', context={'request': request, 'result': result})
+
+'''
+import uvicorn
+
+if __name__ == "__main__":
+    uvicorn.run("app:app", host="127.0.0.1", port=8000, reload=True)
+'''

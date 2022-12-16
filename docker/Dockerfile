@@ -9,7 +9,7 @@ COPY requirements.txt ./requirements.txt
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy scripts to make app.py work
-#COPY scripts ./scripts
+COPY scripts ./scripts
 
 # Copy FastAPI root
 COPY app.py ./

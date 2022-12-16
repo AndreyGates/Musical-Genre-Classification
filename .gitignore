@@ -7,4 +7,5 @@ backup/
 __MACOSX/
 .idea/
 .DS_Store
-
+venv
+__pycache__

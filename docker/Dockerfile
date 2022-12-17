@@ -3,10 +3,12 @@ FROM tiangolo/uvicorn-gunicorn-fastapi:python3.9
 
 # Create the directory for the container
 WORKDIR /app
+
+# Copy the dependencies list
 COPY requirements.txt ./requirements.txt
 
 # Install the dependencies
-RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install --no-cache-dir --upgrade -r requirements.txt
 
 # Specially for Librosa
 RUN apt-get -y update && apt install -y libsndfile1

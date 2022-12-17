@@ -6,26 +6,27 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <link rel="stylesheet" href="{{ url_for('static', path='css/styles.css') }}" type="text/css">
         <link rel="icon" href="data:;base64,=">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Russo+One">
         <title>Music Genre Classification</title>
         <style>
             @font-face {
-	            font-family: 'Gotham Rounded';
-	            src: url('static/fonts/GothamRounded-Bold.woff2') format('woff2'),
-                     url('static/fonts/GothamRounded-Bold.woff') format('woff');
-	            font-weight: bold;
-	            font-style: normal;
+                font-family: 'Gotham Rounded';
+                src: url('static/fonts/GothamRounded-Bold.woff2') format('woff2'),
+                      url('static/fonts/GothamRounded-Bold.woff') format('woff');
+                font-weight: bold;
+                font-style: normal;
                 }
 
             @font-face {
-	            font-family: 'Gotham Rounded';
-	            src: url('static/fonts/GothamRounded-Light.woff2') format('woff2'),
+	              font-family: 'Gotham Rounded';
+	              src: url('static/fonts/GothamRounded-Light.woff2') format('woff2'),
                      url('static/fonts/GothamRounded-Light.woff') format('woff');
                 font-weight: 300;
                 font-style: normal;
                 }
 
             @font-face {
-	            font-family: 'Gotham Rounded';
+	              font-family: 'Gotham Rounded';
                 src: url('static/fonts/GothamRounded-Book.woff2') format('woff2'),
                      url('static/fonts/GothamRounded-Book.woff') format('woff');
                 font-weight: normal;
@@ -41,9 +42,9 @@
                   <img class="logo" alt="logo" src="{{ url_for('static', path='images/logo.png') }}">
                   <h2 class="brand-name">Web Dev for Alex Sorokin</h2>
                 </div>
-                <h1 class="title">Music Genre Recognition</h1>
+                <h1 class="title">Распознавание музыкального жанра</h1>
                 <h3 class="sub-title">
-                  If you cannot tell pop and reggae apart, this website is for you!
+                  Если Вы не можете отличить поп от регги, этот сайт для Вас!
                 </h3>
               </div>
             </div>
@@ -51,16 +52,16 @@
             <div class="light-header grid">
               <div class="content">
                 <form class='audio-form' method="post" enctype="multipart/form-data">
-                    <div>
-                        <input type="file" name="file">
+                    <div style="margin-top: 8px;">
+                      <input type="file" name="file" id="audio" style="display:none;"/>
+                      <label for="audio">Нажми меня, чтобы загрузить трек</label>
                     </div>
                     <div>
-                        <button type="submit" value="Submit">
-                        GO
+                        <button type="submit" value="Submit">Запуск
                     </div>
                 </form>
                 <div style="text-align: center;">
-                    <h1>Genre: {{ result }}</h1>
+                    <h1>Жанр: {{ result }}</h1>
                 </div>
               </div>
             </div>

@@ -1,6 +1,6 @@
 body {
   margin: 0 auto;
-  font-family: Gotham Rounded, sans-serif;
+  font-family: Gotham Rounded, Russo One, sans-serif;
   padding-bottom: 50px;
 }
 
@@ -93,17 +93,29 @@ body {
   background-color: #DCF3FF;
 }
 
+.audio-form label{
+  border: 2px solid black;
+  border-radius: 1em;
+  padding: .3em 1em;
+  margin-right: 1em;
+  cursor: pointer;
+  outline: none;
+  flex-grow: 1;
+}
+
+.audio-form label:hover, .audio-form label:focus {
+  background-color: #08334a;
+}
+
 .audio-form button {
-    
   color: white;
   background-color: #111;
   border: 2px solid white;
   border-radius: 50%;
-  padding: .5em 1em;
+  padding: .5em .5em;
   max-width: 250px;
   cursor: pointer;
   height: 50px;
-  width: 50px;
   color: white;
 }
 

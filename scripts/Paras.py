@@ -6,7 +6,7 @@ class ParaSetting:
         self.batch_size = None
         self.label_size = 10
         self.epoch_num = None
-        self.sample_rate = 44100
+        self.sample_rate = 22050
         self.use_cuda = True
         self.cuda = torch.cuda.is_available() and self.use_cuda
         self.log_step = None

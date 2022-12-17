@@ -1,6 +1,7 @@
 body {
   margin: 0 auto;
-  font-family: Gotham Rounded, Russo One, sans-serif;
+  /*font-family: Gotham Rounded, Russo One, sans-serif;*/
+  font-family: Russo One, sans-serif;
   padding-bottom: 50px;
 }
 
@@ -14,8 +15,9 @@ body {
 
 .content {
   grid-area: content;
-  max-width: 1000px;
+  max-width: 1500px;
   width: 100%;
+  display: inline-block;
 }
 
 .dark-header {
@@ -75,7 +77,9 @@ body {
   justify-content: center;
   margin-top: 4rem;
   margin-bottom: 1rem;
-  font-size: 1.75rem;
+  font-size: 1.5em;
+  position: relative;
+  top: -60px;
 }
 
 .audio-form input {
@@ -87,6 +91,7 @@ body {
   margin-right: 1em;
   outline: none;
   flex-grow: 1;
+  width: 100px;
 }
 
 .audio-form input:focus {
@@ -97,10 +102,12 @@ body {
   border: 2px solid black;
   border-radius: 1em;
   padding: .3em 1em;
-  margin-right: 1em;
   cursor: pointer;
   outline: none;
   flex-grow: 1;
+  display:inline-block;
+  text-align: center;
+  transition: background-color 0.5s;
 }
 
 .audio-form label:hover, .audio-form label:focus {
@@ -112,11 +119,14 @@ body {
   background-color: #111;
   border: 2px solid white;
   border-radius: 50%;
-  padding: .5em .5em;
   max-width: 250px;
   cursor: pointer;
   height: 50px;
   color: white;
+  position: absolute;
+  left: 47%;
+  margin-top: 80px;
+  transition: background-color 0.5s;
 }
 
 .audio-form button:hover, .audio-form button:focus {

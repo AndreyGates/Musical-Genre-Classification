@@ -9,7 +9,6 @@ body {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   gap: 20px;
-  padding: 0 40px;
   grid-template-areas: ". content content content content .";
 }
 

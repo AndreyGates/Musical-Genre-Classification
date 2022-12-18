@@ -50,9 +50,12 @@ def home(request: Request):
 # Define the route to the music genre classifier
 @app.post("/", response_class=HTMLResponse)
 async def form_post(request: Request, file: UploadFile = File(...)):
-    if(not(file)):
-        raise HTTPException(status_code=400, 
-                            detail = "Please provide an MP3 audiofile")        
+    # if an uploaded file is not a file or doesn't have MP3 format, raise exception
+    if (not(file) or file.filename[-3:] != 'mp3'):
+        result = "Произошла ошибка. Пожалуйста, загрузите аудиофайл формата MP3."
+        return templates.TemplateResponse('form.html', context={'request': request, 'result': result}) 
+        #raise HTTPException(status_code=400, 
+                            #detail = "Пожалуйста, загрузите аудиофайл формата MP3")     
 
     with open('test/test.mp3', 'wb') as buffer:
         shutil.copyfileobj(file.file, buffer)

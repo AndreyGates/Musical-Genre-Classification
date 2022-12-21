@@ -1,4 +1,9 @@
 # Musical Genre Classification
+
+
+https://user-images.githubusercontent.com/56700300/208972069-a08ff02d-2e24-43e1-9e84-9eb6538f99b0.mp4
+
+
 Three Models for Musical Genre Classification are discussed, one CNN model and two CRNN models. This project is based on Pytorch. <a href="https://github.com/XiplusChenyu/Musical-Genre-Classification/blob/master/music_genre_classification.pdf">Project report here.</a>
 
 ## Get Start:

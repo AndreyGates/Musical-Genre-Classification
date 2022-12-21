@@ -3,6 +3,17 @@
 
 https://user-images.githubusercontent.com/56700300/208972069-a08ff02d-2e24-43e1-9e84-9eb6538f99b0.mp4
 
+## Usage
+
+Pull the docker image:
+```
+$ docker pull andreygates/mgr
+```
+And run the container in detached mode:
+```
+$ docker run -d -p 80:80/tcp andreygates/mgr
+```
+
 ## Get Start:
 ### Audio Files
 - We use enhanced GTZAN Dataset, which contains 72 full songs and 1000 30s audio tracks.

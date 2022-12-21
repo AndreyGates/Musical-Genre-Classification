@@ -5,11 +5,7 @@ https://user-images.githubusercontent.com/56700300/208972069-a08ff02d-2e24-43e1-
 
 ## Usage
 
-Pull the docker image:
-```
-$ docker pull andreygates/mgr
-```
-And run the container in detached mode:
+Run the container in detached mode:
 ```
 $ docker run -d -p 80:80/tcp andreygates/mgr
 ```

@@ -73,4 +73,4 @@ We offers three pre-processed datasets, you can also generate datasets using **B
 
 # Thanks:
 - https://www.mp3juices.cc/ for music download
-- https://github.com/cetinsamet/music-genre-classification
+- https://github.com/XiplusChenyu/Musical-Genre-Classification

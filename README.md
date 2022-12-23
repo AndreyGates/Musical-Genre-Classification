@@ -1,5 +1,14 @@
 # Musical Genre Classification
-Three Models for Musical Genre Classification are discussed, one CNN model and two CRNN models. This project is based on Pytorch. <a href="https://github.com/XiplusChenyu/Musical-Genre-Classification/blob/master/music_genre_classification.pdf">Project report here.</a>
+
+
+https://user-images.githubusercontent.com/56700300/208972069-a08ff02d-2e24-43e1-9e84-9eb6538f99b0.mp4
+
+## Usage
+
+Run the container in detached mode:
+```
+$ docker run -d -p 80:80/tcp andreygates/mgr
+```
 
 ## Get Start:
 ### Audio Files
@@ -68,4 +77,4 @@ We offers three pre-processed datasets, you can also generate datasets using **B
 
 # Thanks:
 - https://www.mp3juices.cc/ for music download
-- https://github.com/cetinsamet/music-genre-classification
+- https://github.com/XiplusChenyu/Musical-Genre-Classification
